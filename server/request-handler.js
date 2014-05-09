@@ -1,17 +1,20 @@
-var messages = [];
+var messages = [{
+  username: 'elmo',
+  text: 'elmo loves you',
+  roomname: 'sesame street',
+  messageId: 0,
+  createdAt: -1
+}];
 
 var messageId = 0;
 var queryTypes = {
   '-createdAt': function(messages) {
-    console.log('sort sort sort');
-    console.log(messages[0]);
     messages.sort(function(message1, message2) {
       var date1 = Date.parse(message1.createdAt);
       var date2 = Date.parse(message2.createdAt);
 
       return date2 - date1;
     });
-    console.log(messages[0]);
   }
 };
 
